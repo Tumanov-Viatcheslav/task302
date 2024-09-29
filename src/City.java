@@ -26,4 +26,12 @@ public class City {
     public double distanceToCity(City another) {
         return Math.sqrt((another.x - x) * (another.x - x) + (another.y - y) * (another.y - y));
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

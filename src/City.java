@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class City {
     double x, y;
 
@@ -7,6 +9,18 @@ public class City {
     }
 
     public City() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof City city)) return false;
+        return Double.compare(x, city.x) == 0 && Double.compare(y, city.y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 
     public double distanceToCity(City another) {
